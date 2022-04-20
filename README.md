@@ -49,6 +49,9 @@ you to play with:
 - https://www.gutenberg.org/files/1404/1404-h/1404-h.htm
 - https://www.gutenberg.org/cache/epub/17439/pg17439.html
 
+## A Note on Commenting
+As a general rule, I actively try not to comment code and instead refactor it to be readable /
+understandable. So you won't find many if any comments in this codebase.
 
 ## Even better if....
 

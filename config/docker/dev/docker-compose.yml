@@ -1,0 +1,61 @@
+services:
+  web:
+    restart: always
+    image: api:dev
+    build:
+      context: ../../..
+      dockerfile: config/docker/dev/api.Dockerfile
+    command: python run_web.py
+    ports:
+      - 80:5000
+    environment:
+      FLASK_ENV: development
+      RABBIT_HOST: rabbitmq
+      RABBIT_QUEUE: nate_challenge_jobs
+      MONGO_HOST: mongo
+      MONGO_DB: nate_challenge_jobs
+    volumes:
+      - ../../../services/api:/app
+    depends_on:
+      - rabbitmq
+      - mongodb
+  worker:
+    restart: always
+    image: api:dev
+    build:
+      context: ../../..
+      dockerfile: config/docker/dev/api.Dockerfile
+    command: python run_worker.py
+    environment:
+      RABBIT_HOST: rabbitmq
+      RABBIT_QUEUE: nate_challenge_jobs
+      MONGO_HOST: mongo
+      MONGO_DB: nate_challenge_jobs
+    volumes:
+      - ../../../services/api:/app
+    depends_on:
+      - rabbitmq
+      - mongodb
+  rabbitmq:
+    hostname: rabbitmq
+    image: rabbitmq:latest
+    expose:
+      - 5672
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+      interval: 3s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+  mongodb:
+    hostname: mongo
+    image: mongo:latest
+    expose:
+      - 27017
+    restart: always
+    healthcheck:
+      test: echo 'db.runCommand({serverStatus:1}).ok' | mongo admin -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

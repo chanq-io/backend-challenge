@@ -53,6 +53,9 @@ you to play with:
 As a general rule, I actively try not to comment code and instead refactor it to be readable /
 understandable. So you won't find many if any comments in this codebase.
 
+## API Documentation
+Lightweight documentation has been provided in  `API.md`.
+
 ## Even better if....
 
 Thought I'd finish this ramble with a few things I wish I could improve but don't have the time to:

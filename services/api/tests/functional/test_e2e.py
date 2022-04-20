@@ -44,10 +44,6 @@ def test_word_count_fail():
     body = response.json()
     assert_e2e_response(response, 202, True, "Scheduled Job", check_post_data)
 
-    data = {"job_id": body["data"]["job_id"]}
-    response = get("http://web:5000/word-count", data=data)
-    assert_e2e_response(response, 200, True, "Fetched Job", check_get_in_progress_data)
-
     time.sleep(2)
 
     data = {"job_id": body["data"]["job_id"]}

@@ -3,7 +3,7 @@
 I just want to start by saying I enjoyed this challenge! Most interview pipelines rely heavily on timed pressure challenges which I don't think are a great test of a developer's skill, so it is refreshing to do a takeaway task. I spent a fair amount of the bank holiday weekend building it and probably went further than I should have, but I was sat in the countryside sun and enjoyed the project, so no harm done!
 
 
-## Reproducibility
+## Reproducibility
 
 Everything is managed through the `Makefile`, so I suggest opening that your first stop. Here's a
 summary of the commands available:

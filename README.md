@@ -1,7 +1,10 @@
 # Nate Backend Challenge
+
 I just want to start by saying I enjoyed this challenge! Most interview pipelines rely heavily on timed pressure challenges which I don't think are a great test of a developer's skill, so it is refreshing to do a takeaway task. I spent a fair amount of the bank holiday weekend building it and probably went further than I should have, but I was sat in the countryside sun and enjoyed the project, so no harm done!
 
+
 ## Reproducibility
+
 Everything is managed through the `Makefile`, so I suggest opening that your first stop. Here's a
 summary of the commands available:
 - `make build-dev` : builds development environment that hoists the `services/api` directory into the working directory (`/app`) of the container. This allows you to edit in your favourite editor while testing in a reproducible env.
@@ -19,6 +22,7 @@ summary of the commands available:
 - `make down-prod` : tears down the production stack and cleans up
 
 ## Tech Stack and Rationale
+
 - **Python 3.10.4** : There would be little sense in using a version of python earlier than the latest stable version as we have no backward compatability concerns.
 - **Flask** : The task specification didn't explicitly require data storage, an ORM, caching or much in the way of front end rendering, so flask was the obvious choice given it's minimalist and lightweight design.
 - **RabbitMQ** : Needed a message broker for my distributed design and it upports a variety of pub/sub scenarios and has decent python bindings.
@@ -30,6 +34,7 @@ summary of the commands available:
 - **Makefile** : A comfort blanket for managing cli scripts.
 
 ## A Note on Distributed System Design
+
 I opted for a standard web-queue-worker design. Ngnix is used as a load balancer to forward requests on to a web api tier powered by gunicorn and flask. The web tier publishes word-count jobs on to a rabbitmq task queue and stores the initial job state in a mongodb database. A worker tier then consumes jobs from the queue, updating the db job state as it completes or fails the job. Users can POST jobs to the api and make GET request to check the status of their job. This design permits both vertical and horizontal scaling of web & worker tiers. Obviously, in a production scenario I would make the data and queue tiers more robust using heartbeats, sharding and add a security layer to prevent bad actors from misbehaving.
 
 In terms of load testing, I ran `wrk` and was a little disappointed by the performance, only
@@ -46,6 +51,7 @@ you to play with:
 
 
 ## Even better if....
+
 Thought I'd finish this ramble with a few things I wish I could improve but don't have the time to:
 - **Silently Failing Endpoints**: you may notice some of the consumer tests with suspicious strings
   in their names like 'silently_fails'. This is effectively a TODO to provide better error handling

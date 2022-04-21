@@ -12,12 +12,12 @@ summary of the commands available:
 - `make test-functional-dev`: runs end-to-end tests in development environment
 - `make coverage-dev` : runs unit & e2e tests in development environment and produces a coverage report
 - `make lint-dev` : runs `mypy`, `flake8` & `black --check` in development environment and scolds you for breaking their rules
-- `make format-dev` : runs black on the mounted codebase, ruthlessly reformating according to its draconian rules. I don't like all of black's formatting choices, but I do like having it there to prevent such schoolyard arguments like "my dad's way of formatting brackets is better than your dad's" that are commonplace amongst junior devs...
+- `make format-dev` : runs `black` on the mounted codebase, ruthlessly reformating according to its draconian rules. I don't like all of `black`'s formatting choices, but I do like having it there to prevent such schoolyard arguments like "my dad's way of formatting brackets is better than your dad's" that are commonplace amongst junior devs...
 - `make run-dev` : stands up the whole development stack in a daemonless way so you can see the logs. From here you can usage test the api using `httpie` or your preferred tool.
 - `make build-run-dev` : simply `build-dev` + `run-dev`
 - `make down-dev` : tears down the development stack and cleans up
 - `make build-prod` : builds "production" environment. Images are similar to the dev image, specialised to container type (e.g. web api vs worker). I've used inverted commas around "production" here to emphasise that this is obviously *not* a production stack and would require a fair bit more work to make it so.
-- `make run-prod` : stands up the whole production stack in a daemonless way so you can see the logs. From here you can usage test the api using `httpie` or your preferred tool. Its more performant under load than the development stack due to `nginx` + `gunicorn` magic, but could be improved further with more work. You'll notice that I'm spinning up two consumers. This is just to emphasise how easy it is to scale this kind of arch horizontally.
+- `make run-prod` : stands up the whole "production" stack in a daemonless way so you can see the logs. From here you can usage test the api using `httpie` or your preferred tool. Its more performant under load than the development stack due to `nginx` + `gunicorn` magic, but could be improved further with more work. You'll notice that I'm spinning up two consumers. This is just to emphasise how easy it is to scale this kind of arch horizontally.
 - `make build-run-prod`: simply `build-prod` + `run-prod`
 - `make down-prod` : tears down the production stack and cleans up
 

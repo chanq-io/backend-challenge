@@ -12,7 +12,7 @@ summary of the commands available:
 - `make test-functional-dev`: runs end-to-end tests in development environment
 - `make coverage-dev` : runs unit & e2e tests in development environment and produces a coverage report
 - `make lint-dev` : runs `mypy`, `flake8` & `black --check` in development environment and scolds you for breaking their rules
-- `make format-dev` : runs `black` on the mounted codebase, ruthlessly reformating according to its draconian rules. I don't like all of `black`'s formatting choices, but I do like having it there to prevent such schoolyard arguments like "my dad's way of formatting brackets is better than your dad's" that are commonplace amongst junior devs...
+- `make format-dev` : runs `black` on the mounted codebase, ruthlessly reformating according to its draconian rules. I don't like all of `black`'s formatting choices, but employing it as *dogma automata* is a nice way to prevent such schoolyard arguments like "my dad's way of formatting brackets is better than your dad's" that are commonplace amongst junior devs...
 - `make run-dev` : stands up the whole development stack in a daemonless way so you can see the logs. From here you can usage test the api using `httpie` or your preferred tool.
 - `make build-run-dev` : simply `build-dev` + `run-dev`
 - `make down-dev` : tears down the development stack and cleans up

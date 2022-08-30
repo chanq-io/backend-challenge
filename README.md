@@ -1,6 +1,6 @@
-# Nate Backend Challenge
+Note this challenge was originally private for Nate. I accepted an offer from them only to have it rescinded two weeks before joining due to an internal restructuring of the company. I've decided to make this public for the time being as it is a recent example of my engineering style and I now need to find a new position. 
 
-I just want to start by saying I enjoyed this challenge! Most interview pipelines rely heavily on timed pressure challenges which I don't think are a great test of a developer's skill, so it is refreshing to do a takeaway task. I spent a fair amount of the bank holiday weekend building it and probably went further than I should have, but I was sat in the countryside sun and enjoyed the project, so no harm done!
+# Backend Challenge
 
 
 ## Reproducibility

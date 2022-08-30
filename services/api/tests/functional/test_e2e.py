@@ -18,7 +18,7 @@ def test_word_count_complete():
         assert "word_count" in body["data"]
         assert body["data"]["status"] == "COMPLETE"
 
-    data = {"url": "https://nate.tech"}
+    data = {"url": "https://example.com"}
     response = post("http://web:5000/word-count", data)
     body = response.json()
     assert_e2e_response(response, 202, True, "Scheduled Job", check_post_data)

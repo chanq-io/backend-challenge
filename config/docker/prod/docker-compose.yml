@@ -16,9 +16,9 @@ services:
     command: gunicorn --bind 0.0.0.0:5000 --timeout 600 --worker-class=gevent run_web:server
     environment:
       RABBIT_HOST: rabbitmq
-      RABBIT_QUEUE: nate_challenge_jobs
+      RABBIT_QUEUE: backend_challenge_jobs
       MONGO_HOST: mongo
-      MONGO_DB: nate_challenge_jobs
+      MONGO_DB: backend_challenge_jobs
     expose:
       - 5000
     depends_on:
@@ -33,9 +33,9 @@ services:
     command: python run_worker.py
     environment:
       RABBIT_HOST: rabbitmq
-      RABBIT_QUEUE: nate_challenge_jobs
+      RABBIT_QUEUE: backend_challenge_jobs
       MONGO_HOST: mongo
-      MONGO_DB: nate_challenge_jobs
+      MONGO_DB: backend_challenge_jobs
     depends_on:
       - rabbitmq
       - mongodb

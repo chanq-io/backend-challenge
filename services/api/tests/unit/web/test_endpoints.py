@@ -105,7 +105,7 @@ def test_word_count_post_returns_400_if_url_not_present_in_request(client, mocke
 
 
 @pytest.mark.parametrize(
-    "malformed_url", ["", [], None, 1234, 56789.10, "nate", "nate.tech", False, {}]
+    "malformed_url", ["", [], None, 1234, 56789.10, "example", "example.com", False, {}]
 )
 def test_word_count_post_returns_bad_request_if_url_malformed(
     client, mocker, malformed_url

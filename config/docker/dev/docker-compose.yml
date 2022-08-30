@@ -11,9 +11,9 @@ services:
     environment:
       FLASK_ENV: development
       RABBIT_HOST: rabbitmq
-      RABBIT_QUEUE: nate_challenge_jobs
+      RABBIT_QUEUE: backend_challenge_jobs
       MONGO_HOST: mongo
-      MONGO_DB: nate_challenge_jobs
+      MONGO_DB: backend_challenge_jobs
     volumes:
       - ../../../services/api:/app
     depends_on:
@@ -28,9 +28,9 @@ services:
     command: python run_worker.py
     environment:
       RABBIT_HOST: rabbitmq
-      RABBIT_QUEUE: nate_challenge_jobs
+      RABBIT_QUEUE: backend_challenge_jobs
       MONGO_HOST: mongo
-      MONGO_DB: nate_challenge_jobs
+      MONGO_DB: backend_challenge_jobs
     volumes:
       - ../../../services/api:/app
     depends_on:

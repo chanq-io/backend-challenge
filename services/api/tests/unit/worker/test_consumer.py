@@ -270,6 +270,6 @@ def _make_mocks(mocker):
 FAKE_HTML = "<tag></tag>"
 FAKE_WORD_COUNT = {"hello": 1}
 FAKE_JOB_ID = "something"
-FAKE_URL = "https://nate.tech"
+FAKE_URL = "https://example.com"
 FAKE_DELIVERY_TAG = "something"
 FAKE_BODY = '{"job_id": "' + FAKE_JOB_ID + '"}'

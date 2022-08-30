@@ -25,10 +25,10 @@
 - **SUCCESS RESPONSE**:
     - `GET`
         - *STATUS*: 200 OK
-        - *BODY*: `{"success": True, "message": "Fetched Job: 507f1f77bcf86cd799439011", "data": { "_id": "507f1f77bcf86cd799439011", "url": "http://nate.tech", "status": "COMPLETE", "word_count": {"hello": 1, ...}}}`
+        - *BODY*: `{"success": True, "message": "Fetched Job: 507f1f77bcf86cd799439011", "data": { "_id": "507f1f77bcf86cd799439011", "url": "http://example.com", "status": "COMPLETE", "word_count": {"hello": 1, ...}}}`
     - `POST`
         - *STATUS*: 202 ACCEPTED
-        - *BODY*: `{"success": True, "message": "Scheduled Job: 507f1f77bcf86cd799439011", "data": { "_id": "507f1f77bcf86cd799439011", "url": "http://nate.tech", "status": "IN_PROGRESS"}}`
+        - *BODY*: `{"success": True, "message": "Scheduled Job: 507f1f77bcf86cd799439011", "data": { "_id": "507f1f77bcf86cd799439011", "url": "http://example.com", "status": "IN_PROGRESS"}}`
 - **ERROR RESPONSE**:
     - `GET`
         - *STATUS*: 400 BAD REQUEST

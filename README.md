@@ -1,4 +1,4 @@
-Note this challenge was originally private for Nate. I accepted an offer from them only to have it rescinded two weeks before joining due to an internal restructuring of the company. I've decided to make this public for the time being as it is a recent example of my engineering style and I now need to find a new position. 
+Note, this codebase was a challenge was originally private for another company. I accepted an offer from them only to have it frustratingly rescinded two weeks before joining due to an internal restructuring of the company. I've decided to make this public for the time being as it is a recent example of my engineering style and I now need to find a new position. 
 
 # Backend Challenge
 
